@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!--
+		Copyright (C) 2010 Felix Bechstein
+	-->
+	<!--
+		This file is part of WebSMS. This program is free software; you can
+		redistribute it and/or modify it under the terms of the GNU General
+		Public License as published by the Free Software Foundation; either
+		version 3 of the License, or (at your option) any later version.
+	-->
+	<!--
+		This program is distributed in the hope that it will be useful, but
+		WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+		General Public License for more details. You should have received a
+		copy of the GNU General Public License along with this program; If
+		not, see <http://www.gnu.org/licenses/>.
+	-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/connector_pbxnetwork_preferences">
+	<CheckBoxPreference android:key="enable_pbxnetwork"
+		android:title="@string/connector_pbxnetwork_enable_" />
+	<EditTextPreference android:key="user_pbx"
+		android:title="@string/username_" android:dialogTitle="@string/username_"
+		android:summary="@string/username_hint"
+		android:inputType="textEmailAddress" android:dependency="enable_pbxnetwork" />
+	<EditTextPreference android:key="password_pbx"
+		android:inputType="textPassword" android:title="@string/password_"
+		android:dialogTitle="@string/password_" android:dependency="enable_pbxnetwork" />
+	<CheckBoxPreference android:key="use_default_sender"
+		android:defaultValue="true" android:title="@string/use_derfault_sender_"
+		android:summary="@string/use_derfault_sender_hint"
+		android:disableDependentsState="true" android:dependency="enable_pbxnetwork" />
+	<com.lmb.android.websms.pbxnetwork.ExtensionsPreference android:key="custom_sender"
+		android:title="@string/choose_extension"
+		android:dialogTitle="@string/choose_extension" android:summary="@string/choose_extension_hint"
+		android:dependency="use_default_sender" />
+</PreferenceScreen>

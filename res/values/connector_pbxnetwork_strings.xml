@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!--
+		Copyright (C) 2010 Felix Bechstein, Lorenz Bauer
+	-->
+	<!--
+		This file is part of WebSMS. This program is free software; you can
+		redistribute it and/or modify it under the terms of the GNU General
+		Public License as published by the Free Software Foundation; either
+		version 3 of the License, or (at your option) any later version.
+	-->
+	<!--
+		This program is distributed in the hope that it will be useful, but
+		WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+		General Public License for more details. You should have received a
+		copy of the GNU General Public License along with this program; If
+		not, see <http://www.gnu.org/licenses/>.
+	-->
+<resources>
+	<string name="app_name">WebSMS Connector: PBX-Network</string>
+	<string name="app_version">2.2</string>
+	<string name="connector_pbxnetwork_author">Lorenz Bauer</string>
+	<string name="connector_pbxnetwork_name">PBX-Network</string>
+	<string name="connector_pbxnetwork_preferences">Preferences - PBX-Network</string>
+	<string name="connector_pbxnetwork_enable_">Enable PBX-Network</string>
+	<string name="connector_default">Default</string>
+	<string name="connector_lowcost">Low Cost</string>
+	<string name="choose_extension">Choose extension</string>
+	<string name="choose_extension_hint">Select which of your extensions is used for sending SMS.</string>
+	<string name="username_hint">The username for the web interface.</string>
+	<string name="loading_extensions">Loading registered extensions, please wait...</string>
+	<string name="err_login">Login failed</string>
+	<string name="err_balance">Could not retrieve account balance</string>
+	<string name="err_extensions">Could not retrieve registered extensions</string>
+	<string name="err_sending">Could not send short message</string>
+	<string name="err_timeout">: the connection timed out.</string>
+</resources>

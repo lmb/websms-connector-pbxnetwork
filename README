@@ -1,4 +1,7 @@
-You will need websms-api [1] to compile this code.
+This is a connector for the WebSMS project [1]. It can be used to send SMS via PBX-Network (Personal-VoIP.de).
 
-[1] http://github.com/felixb/websms-api/
+You will need websms-api [2] to compile this code.
+
+[1] http://code.google.com/p/websmsdroid/
+[2] http://github.com/felixb/websms-api/
 

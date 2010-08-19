@@ -32,7 +32,7 @@
 		android:summary="@string/use_derfault_sender_hint"
 		android:disableDependentsState="true" android:dependency="enable_pbxnetwork" />
 	<com.lmb.android.websms.pbxnetwork.ExtensionsPreference android:key="custom_sender"
-		android:title="@string/choose_extension"
-		android:dialogTitle="@string/choose_extension" android:summary="@string/choose_extension_hint"
+		android:title="@string/custom_extension"
+		android:dialogTitle="@string/custom_extension" android:summary="@string/custom_extension_hint"
 		android:dependency="use_default_sender" />
 </PreferenceScreen>

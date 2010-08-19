@@ -19,5 +19,16 @@
 <resources>
 	<string name="connector_pbxnetwork_preferences">Einstellungen - PBX-Network</string>
 	<string name="connector_pbxnetwork_enable_">Aktiviere PBX-Network</string>
-	<string name="username_hint">Benutzername für das Web-Interface.</string>
+	<string name="username_hint">Web-Interface Benutzername.</string>
+	<string name="connector_default">Standard</string>
+	<string name="connector_lowcost">Low-Cost</string>
+	<string name="custom_extension">Rufnummer wählen</string>
+	<string name="custom_extension_hint">Wählen Sie welche Rufnummer zum versenden von SMS genutzt wird.</string>
+	<string name="loading_extensions">Lade registrierte Rufnummern, bitte warten...</string>
+	<string name="err_login">Login fehlgeschlagen</string>
+	<string name="err_balance">Konnte Guthaben nicht abrufen</string>
+	<string name="err_extensions">Konnte registrierte Rufnummern nicht abrufen</string>
+	<string name="err_unregistered_extension">Die Nummer %s ist nich als Rufnummer registriert.</string>
+	<string name="err_sending">Konnte SMS nicht senden</string>
+	<string name="err_timeout">: Zeitüberschreitung bei der Verbindung.</string>
 </resources>

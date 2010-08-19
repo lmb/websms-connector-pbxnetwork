@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Felix Bechstein
+ * Copyright (C) 2010 Lorenz Bauer
  * 
  * This file is part of WebSMS.
  * 
@@ -18,11 +18,10 @@
  */
 
 /**
- * WebSMS Connector: Example. Example connector helping people implementing
- * their own connectors.
+ * WebSMS Connector: PBX-Network
  * 
- * @version 3.0
- * @author flx
+ * @version 0.9
+ * @author lmb
  */
 package com.lmb.android.websms.pbxnetwork;
 

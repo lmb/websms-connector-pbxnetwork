@@ -100,9 +100,11 @@ public class ConnectorPbxnetwork extends Connector {
 		this.mSenderIsValid = this.verifySender(context, intent);
 
 		if (!this.mSenderIsValid) {
-			throw new WebSMSException(String.format(
-					"The sender %s is not a registered extension.", this
-							.getSender(context, intent)));
+			String message = String.format(context
+					.getString(R.string.err_unregistered_extension), this
+					.getSender(context, intent));
+
+			throw new WebSMSException(message);
 		}
 	}
 
@@ -130,12 +132,10 @@ public class ConnectorPbxnetwork extends Connector {
 	 */
 	@Override
 	protected final void doSend(final Context context, final Intent intent) {
-		// TODO: send a message provided by intent
 		ConnectorCommand cc = new ConnectorCommand(intent);
 
-		String sender = ConnectorPbxnetwork.convertSender(Utils.getSender(
-				context, cc.getDefSender()));
-		Log.i(TAG, "Sending with sender (+)" + sender);
+		String sender = Utils.getSender(context, cc.getDefSender());
+		Log.i(TAG, "Sending with sender " + sender);
 
 		String message = cc.getText();
 		String[] recipients = cc.getRecipients();
@@ -146,6 +146,7 @@ public class ConnectorPbxnetwork extends Connector {
 
 		String subconnector = cc.getSelectedSubConnector();
 		if (subconnector == null) {
+			// FIXME: Can this even happen?
 			throw new RuntimeException("No subconnector was selected!");
 		}
 
@@ -154,6 +155,11 @@ public class ConnectorPbxnetwork extends Connector {
 			if (subconnector.equals(ID_DEFAULT)) {
 				SMS_SERVICE.sendSMS(sender, recipient, message, ticket);
 			} else {
+				if (message.length() > 160) {
+					throw new WebSMSException(context,
+							R.string.err_msg_too_long);
+				}
+
 				SMS_SERVICE.sendLowCostSMS(recipient, message, ticket);
 			}
 		} catch (SocketTimeoutException e) {
@@ -180,9 +186,5 @@ public class ConnectorPbxnetwork extends Connector {
 	protected final String getSender(final Context context, final Intent intent) {
 		return Utils.getSender(context, new ConnectorCommand(intent)
 				.getDefSender());
-	}
-
-	public static final String convertSender(final String sender) {
-		return (sender.startsWith("+")) ? sender.substring(1) : sender;
 	}
 }

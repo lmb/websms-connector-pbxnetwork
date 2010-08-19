@@ -8,4 +8,4 @@ if [ $? -eq 1 ]; then
 fi
 
 echo Fetching ksoap2-android...
-wget -P lib http://ksoap2-android.googlecode.com/files/ksoap2-android-assembly-2.4-jar-with-dependencies.jar
+wget -P libs http://ksoap2-android.googlecode.com/files/ksoap2-android-assembly-2.4-jar-with-dependencies.jar

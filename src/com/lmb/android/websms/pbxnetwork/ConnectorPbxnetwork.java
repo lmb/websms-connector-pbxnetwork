@@ -19,6 +19,8 @@
 package com.lmb.android.websms.pbxnetwork;
 
 import java.net.SocketTimeoutException;
+import java.text.DecimalFormat;
+import java.util.Currency;
 import java.util.Vector;
 
 import android.content.Context;
@@ -124,7 +126,10 @@ public class ConnectorPbxnetwork extends Connector {
 			throw new TimeoutException(context, R.string.err_balance);
 		}
 
-		cs.setBalance(String.format("%.2f Û", credit));
+		DecimalFormat formatter = new DecimalFormat("#0.00Â¤");
+		formatter.setCurrency(Currency.getInstance("EUR"));
+
+		cs.setBalance(formatter.format(credit));
 	}
 
 	/**

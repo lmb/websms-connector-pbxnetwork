@@ -31,4 +31,5 @@
 	<string name="err_unregistered_extension">Die Nummer %s ist nich als Rufnummer registriert.</string>
 	<string name="err_sending">Konnte SMS nicht senden</string>
 	<string name="err_timeout">: Zeitüberschreitung bei der Verbindung.</string>
+	<string name="err_enter_user_and_pass">Bitte geben sie einen Benutzernamen und ein Passwort ein.</string>
 </resources>

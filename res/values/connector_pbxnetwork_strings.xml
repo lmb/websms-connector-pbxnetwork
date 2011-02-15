@@ -18,7 +18,7 @@
 	-->
 <resources>
 	<string name="app_name">WebSMS Connector: PBX-Network</string>
-	<string name="app_version">0.9</string>
+	<string name="app_version">1.0</string>
 	<string name="connector_pbxnetwork_author">Lorenz Bauer</string>
 	<string name="connector_pbxnetwork_name">PBX-Network</string>
 	<string name="connector_pbxnetwork_preferences">Preferences - PBX-Network</string>
@@ -36,4 +36,5 @@
 	<string name="err_sending">Could not send short message</string>
 	<string name="err_timeout">: the connection timed out.</string>
 	<string name="err_msg_too_long">Can not send messages longer than 160 characters using low-cost SMS.</string>
+	<string name="err_enter_user_and_pass">Please enter a username and password.</string>
 </resources>

@@ -27,6 +27,7 @@ import android.os.AsyncTask;
 import android.preference.ListPreference;
 import android.util.AttributeSet;
 import android.widget.Toast;
+import de.ub0r.android.websms.connector.common.WebSMSException;
 
 /**
  * Custom preference for managing data retrieval from {@see NumberService}.
@@ -47,16 +48,20 @@ public class ExtensionsPreference extends ListPreference {
 
 	private class FetchExtensions extends AsyncTask<Void, Void, String[]> {
 		protected Context mContext;
+		protected SoapTypeTicket mTicket;
 		protected ProgressDialog mDialog;
 
-		public FetchExtensions(final Context context) {
+		public FetchExtensions(final Context context,
+				final SoapTypeTicket ticket) {
 			this.mContext = context;
+			this.mTicket = ticket;
 		}
 
 		@Override
 		protected void onPreExecute() {
-			this.mDialog = ProgressDialog.show(this.mContext, "", this.mContext
-					.getString(R.string.loading_extensions), true, false);
+			this.mDialog = ProgressDialog.show(this.mContext, "",
+					this.mContext.getString(R.string.loading_extensions), true,
+					false);
 		}
 
 		@Override
@@ -66,9 +71,7 @@ public class ExtensionsPreference extends ListPreference {
 
 			Vector<String> extensions;
 			try {
-				// TODO: This is probably not thread safe
-				extensions = ns.getUserExtensions(ConnectorPbxnetwork.TICKET
-						.get(this.mContext));
+				extensions = ns.getUserExtensions(this.mTicket);
 			} catch (SocketTimeoutException e) {
 				return null;
 			} finally {
@@ -101,6 +104,20 @@ public class ExtensionsPreference extends ListPreference {
 
 	@Override
 	protected void onClick() {
-		new FetchExtensions(this.getContext()).execute();
+		SoapTypeTicket ticket = null;
+		try {
+			ticket = ConnectorPbxnetwork.TICKET.get(this.getContext());
+		} catch (WebSMSException e) {
+			// Password / username not set
+			String msg = this.getContext().getString(
+					R.string.err_enter_user_and_pass);
+			Toast error = Toast.makeText(this.getContext(), msg,
+					Toast.LENGTH_LONG);
+			error.show();
+
+			return;
+		}
+
+		new FetchExtensions(this.getContext(), ticket).execute();
 	}
 }

@@ -126,7 +126,7 @@ public class ConnectorPbxnetwork extends Connector {
 			throw new TimeoutException(context, R.string.err_balance);
 		}
 
-		DecimalFormat formatter = new DecimalFormat("#0.00¤");
+		DecimalFormat formatter = new DecimalFormat("#0.00\u00A4");
 		formatter.setCurrency(Currency.getInstance("EUR"));
 
 		cs.setBalance(formatter.format(credit));

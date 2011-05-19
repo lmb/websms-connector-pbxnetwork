@@ -19,8 +19,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.lmb.android.websms.pbxnetwork" android:versionName="1.0"
 	android:versionCode="1000" android:installLocation="auto">
-	<application android:label="@string/app_name" android:icon="@drawable/icon"
-		android:debuggable="true">
+	<application android:label="@string/app_name" android:icon="@drawable/icon">
 
 		<!--
 			This Activity is brought by the WebSMS Connector Plugin API. It shows
@@ -58,7 +57,11 @@
 		</receiver>
 	</application>
 	<uses-sdk android:minSdkVersion="3" android:targetSdkVersion="8" />
-	<supports-screens android:anyDensity="true" />
+	<supports-screens android:smallScreens="true"
+		android:normalScreens="true" android:largeScreens="true"
+		android:anyDensity="true" />
+	<uses-feature android:name="android.hardware.touchscreen"
+		android:required="false" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<!-- WAKE_LOCK needed to make sure, sms are send even if user sends device to sleep. -->
 	<uses-permission android:name="android.permission.WAKE_LOCK" />

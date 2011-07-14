@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program; If not, see <http://www.gnu.org/licenses/>.
  */
-package com.lmb.android.websms.pbxnetwork;
+package com.websms.connector.pbxnetwork;
 
 import android.content.Context;
 import de.ub0r.android.websms.connector.common.WebSMSException;

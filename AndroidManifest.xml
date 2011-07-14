@@ -17,8 +17,8 @@
 		not, see <http://www.gnu.org/licenses/>.
 	-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.lmb.android.websms.pbxnetwork" android:versionName="1.1"
-	android:versionCode="1001" android:installLocation="auto">
+	package="com.websms.connector.pbxnetwork" android:versionName="1.10"
+	android:versionCode="1010" android:installLocation="auto">
 	<application android:label="@string/app_name" android:icon="@drawable/icon">
 
 		<!--
@@ -42,16 +42,16 @@
 
 		<activity android:name="Preferences">
 			<intent-filter>
-				<action android:name="com.lmb.android.websms.pbxnetwork.PREFS" />
+				<action android:name="com.websms.connector.pbxnetwork.PREFS" />
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
 		</activity>
-		<receiver android:name="com.lmb.android.websms.pbxnetwork.ConnectorPbxnetwork"
+		<receiver android:name="com.websms.connector.pbxnetwork.ConnectorPbxnetwork"
 			android:enabled="true" android:exported="true">
 			<intent-filter>
-				<action android:name="com.lmb.android.websms.pbxnetwork.RUN_BOOTSTRAP" />
-				<action android:name="com.lmb.android.websms.pbxnetwork.RUN_UPDATE" />
-				<action android:name="com.lmb.android.websms.pbxnetwork.RUN_SEND" />
+				<action android:name="com.websms.connector.pbxnetwork.RUN_BOOTSTRAP" />
+				<action android:name="com.websms.connector.pbxnetwork.RUN_UPDATE" />
+				<action android:name="com.websms.connector.pbxnetwork.RUN_SEND" />
 				<action android:name="de.ub0r.android.websms.connector.UPDATE" />
 			</intent-filter>
 		</receiver>

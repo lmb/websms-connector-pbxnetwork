@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Lorenz Bauer
+ * Copyright (C) 2010 Felix Bechstein, Lorenz Bauer
  * 
  * This file is part of WebSMS.
  * 
@@ -16,12 +16,28 @@
  * You should have received a copy of the GNU General Public License along with
  * this program; If not, see <http://www.gnu.org/licenses/>.
  */
+package com.websms.connector.pbxnetwork;
+
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
 
 /**
- * WebSMS Connector: PBX-Network
+ * Preferences.
  * 
- * @version 0.9
- * @author lmb
+ * @author flx
  */
-package com.lmb.android.websms.pbxnetwork;
+public final class Preferences extends PreferenceActivity {
+	/** Preference key: enabled. */
+	static final String PREFS_ENABLED = "enable_pbxnetwork";
+	static final String PREFS_USER = "user_pbx";
+	static final String PREFS_PASSWORD = "password_pbx";
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected void onCreate(final Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		this.addPreferencesFromResource(R.xml.pbxnetwork_prefs);
+	}
+}
